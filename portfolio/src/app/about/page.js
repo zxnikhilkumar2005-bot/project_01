@@ -1,9 +1,17 @@
+import TextReveal from "@/components/TextReveal";
+
 export default function Page() {
     return (
         <div>
-            <h1>
-                This is the about page
-            </h1>
+            <TextReveal
+                splitBy="chars"
+                trigger="scroll"
+                scrollStart="top 80%"
+                className=" text-[5rem] font-bold uppercase text-black"
+            >
+                About Page
+
+            </TextReveal>
         </div>
     );
-}
+} 
