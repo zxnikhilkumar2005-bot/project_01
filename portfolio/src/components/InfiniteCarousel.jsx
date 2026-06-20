@@ -6,11 +6,11 @@ import CarouselCard from "./CarouselCard";
 
 
 
-const CARD_W = 300;
-const CARD_H = 380;
+const CARD_W = 400;
+const CARD_H = 480;
 const SCALE = 1.35;
 
-const CARD_GAP = 20;
+const CARD_GAP = 27;
 const DURATION = 25;
 
 const TRACK_H = CARD_H * SCALE;
@@ -40,12 +40,21 @@ const InfiniteCarousel = ({ projects }) => {
     return (
         <div
             style={{
-                padding: `${TRACK_H * 1.2}px 24px`,
+
+                padding: `${TRACK_H * 0.134}px 24px`,
             }
 
             }
             className="overflow-hidden" >
-            <div ref={trackRef} style={{ gap: `${CARD_GAP}px`, width: 'max-content', height: `${TRACK_H}px` }} className="track flex items-center">
+            <div ref={trackRef}
+                style={{
+                    
+                    gap: `${CARD_GAP}px`,
+                    width: 'max-content',
+                    height: `${TRACK_H}px`
+                }}
+                className="track flex items-center"
+            >
                 {doubled.map((project, i) => (
                     <CarouselCard
                         key={i}

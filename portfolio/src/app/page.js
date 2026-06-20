@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <main className="h-screen w-full flex items-center justify-center" >
+    <main className="h-screen w-full flex pt-[5rem]  " >
       <InfiniteCarousel projects={projects} />
     </main>
   );
