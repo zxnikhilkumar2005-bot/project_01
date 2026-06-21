@@ -4,9 +4,6 @@ import gsap from "@/libs/gsap";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 
-
-
-
 const STRIP_COUNT = 12;
 
 const createStrips = () => {
@@ -20,8 +17,6 @@ const createStrips = () => {
     display :flex;
     `;
 
-
-
     for (let i = 0; i < STRIP_COUNT; i++) {
         const strip = document.createElement("div");
         strip.style.cssText = `
@@ -30,21 +25,19 @@ const createStrips = () => {
         background-color: #010101;
         transform: scaleY(0);
         transform-origin: bottom;
-
-        `
+        `;
         overlay.appendChild(strip);
     }
 
     document.body.appendChild(overlay);
 
     return overlay;
-}
+};
 
 const removeOverlay = () => {
     const el = document.getElementById("page-transition-overlay");
-    if (el) el.remove()
-}
-
+    if (el) el.remove();
+};
 
 const useViewTransition = () => {
     removeOverlay();
@@ -62,7 +55,7 @@ const useViewTransition = () => {
             ease: "power3.inout",
             stagger: {
                 each: 0.06,
-                from: 'edges'
+                from: "edges"
             },
             onComplete: () => {
                 router.push(href);
@@ -75,7 +68,7 @@ const useViewTransition = () => {
                     delay: 0.2,
                     stagger: {
                         each: 0.06,
-                        from: 'edges'
+                        from: "edges"
                     },
                     transformOrigin: "top",
                     onComplete: removeOverlay
